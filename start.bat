@@ -1,28 +1,28 @@
-@echo off
+﻿@echo off
 title Yandex Music Downloader
 
 echo.
-echo Проверка наличия Python...
+echo Checking for Python...
 python --version >nul 2>&1
 if %ERRORLEVEL% NEQ 0 (
     echo.
-    echo ОШИБКА: Python не найден в системе.
-    echo Пожалуйста, установите Python с официального сайта: https://www.python.org/downloads/
+    echo ERROR: Python is not installed on the system.
+    echo Please install Python from the official website: https://www.python.org/downloads/
     echo.
-    echo ВАЖНО: Во время установки ОБЯЗАТЕЛЬНО поставьте галочку "Add Python to PATH".
+    echo IMPORTANT: During installation, make sure to check the box "Add Python to PATH".
     echo.
     pause
     exit /b
 )
-echo Python найден, продолжаем...
+echo Python found, continuing...
 echo.
 
-echo Установка/проверка необходимых библиотек...
+echo Installing/checking required dependencies...
 pip install -r requirements.txt
 echo.
-echo Запуск основной программы...
+echo Starting the main program...
 python main.py
 
 echo.
-echo Программа завершила свою работу.
+echo The program has finished.
 pause

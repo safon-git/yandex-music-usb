@@ -1,4 +1,4 @@
-from yandex_music import Client
+﻿from yandex_music import Client
 import win32api
 import os
 
@@ -70,7 +70,7 @@ def main():
     for i, track_short in enumerate(tracks_list):
         print(f"Обработка трека {i + 1}/{track_count}...")
 
-        # Этот блок try...catch отлавливает ошибки на этапе ПОДГОТОВКИ трека
+        # Этот блок try...catch ловит ошибки на этапе ПОДГОТОВКИ трека
         try:
             liketrack = track_short.fetch_track()
 
@@ -78,7 +78,7 @@ def main():
             all_artist_string = ", ".join(artist_names)
             track_name = f'{liketrack.title} - {all_artist_string}'
 
-            # Заменяем символы, недопустимые в имени файла
+            # Заменяем символы, недопустимые в имени файла. ХЗ НАДО ПЕРЕДЕЛАТЬ
             invalid_chars = '<>:"/\\|?*'
             for char in invalid_chars:
                 track_name = track_name.replace(char, '_')
